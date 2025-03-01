@@ -70,7 +70,13 @@
                 // 选定文本
                 text.innerHTML = "";
                 if (text_input.length !== 0) {
-                    join_text = text_input;
+                     if(text_input.includes("陈嘉博")||text_input.includes("王治杰"))
+                    {
+                       join_text = "貌似是个大sb";
+                    }
+                    else {
+                        join_text = text_input;
+                    }
                 } else {
                     join_text = initial_text;
                     console.log(join_text);
