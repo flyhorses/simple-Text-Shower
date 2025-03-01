@@ -1,9 +1,5 @@
 body {
     background-color: #323232;
-    position: relative; /* 确保子元素的绝对定位是相对于 body */
-    min-height: 100vh; /* 确保 body 至少占满整个视口高度 */
-    padding-bottom: 50px; /* 预留底部空间 */
-    box-sizing: border-box; /* 确保 padding 不会增加 body 的总高度 */
 }
 #text {
     color:#14ffec;
@@ -13,18 +9,18 @@ body {
 }
 #inp {
     color:#212121;
-    position: absolute;
-    box-sizing: border-box;
-    width: 0;
-    display: flex;
-    left: 49%;
-    bottom: 50px; /* 与底部保持 50px 距离 */
+    position:fixed;
+    box-sizing:border-box;
+    width:0;
+    display:flex;
+    left:49%;
+    top:69%;
     background-color:#323232;
-    outline: none;
+    outline:none;
     border-top: 0;
     border-right: 0;
     border-left: 0;
-    border-bottom: 2px solid darkcyan;
+    border-bottom: 2px solid  darkcyan;
     transition: width 1s ease;
 }
 #inp:focus{
@@ -32,11 +28,11 @@ body {
     border-color:aqua;
     caret-color: #14ffec;
 }
-#btn {
-    height: 50px;
+#btn{
+    height:50px;
     width: 50px;
     position: absolute;
-    bottom: 50px; /* 与底部保持 50px 距离 */
+    top:65.733333%;
     left: 49%;
     background-color:#14ffec;
     color: #252a34;
@@ -46,4 +42,17 @@ body {
     font-size: 40px;
     line-height: 30%;
     transition: left 1s ease;
+}
+
+/* 添加媒体查询 */
+@media screen and (max-width: 600px) {
+    /* 当屏幕宽度小于等于 600px 时，调整输入框和按钮的位置 */
+    #inp {
+        left: 20%;
+        top: 75%;
+    }
+    #btn {
+        left: 20%;
+        top: 71.733333%;
+    }
 }
