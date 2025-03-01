@@ -39,30 +39,40 @@
             join_num = 0;
             let text_input = inp.value;
             let join_text = "";
+            //let screenW = window.screen.width;
+            let screenW = window.innerWidth;
+            console.log(screenW);
 
             // 改变按钮样式
             if (btn.dataset.status.includes("move")) {
+
                 btn.style.left = "58%";
+                if(screenW <= 800)
+                {
+                    btn.style.left = "83%"; 
+                 }
+
                 // 先淡出
-                btn.classList.add('fade');
                 setTimeout(() => {
                     btn.innerHTML = "o";
                     btn.dataset.status = "add";
                     // 再淡入
-                    btn.classList.remove('fade');
                 }, 300);
 
                 inp.value = "";
                 inp.style.width = "150px";
             } else {
                 btn.style.left = "49%";
+
+                if(screenW <= 800)
+                {
+                    btn.style.left = "43%"; 
+                 }
                 // 先淡出
-                btn.classList.add('fade');
                 setTimeout(() => {
                     btn.innerHTML = "+";
                     btn.dataset.status = "move";
                     // 再淡入
-                    btn.classList.remove('fade');
                 }, 300);
 
                 inp.style.width = "0";
@@ -70,7 +80,7 @@
                 // 选定文本
                 text.innerHTML = "";
                 if (text_input.length !== 0) {
-                     if(text_input.includes("陈嘉博")||text_input.includes("王治杰"))
+                    if(text_input.includes("陈嘉博")||text_input.includes("王治杰"))
                     {
                        join_text = "貌似是个大sb";
                     }
@@ -79,7 +89,6 @@
                     }
                 } else {
                     join_text = initial_text;
-                    console.log(join_text);
                 }
 
                 // 显示文字
