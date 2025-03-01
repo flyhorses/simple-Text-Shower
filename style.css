@@ -1,4 +1,4 @@
-body {
+ body {
     background-color: #323232;
 }
 #text {
@@ -48,11 +48,11 @@ body {
 @media screen and (max-width: 600px) {
     /* 当屏幕宽度小于等于 600px 时，调整输入框和按钮的位置 */
     #inp {
-        left: 20%;
+        left: 43%;
         top: 75%;
     }
     #btn {
-        left: 20%;
+        left: 43%;
         top: 71.733333%;
     }
 }
