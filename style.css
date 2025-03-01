@@ -13,8 +13,8 @@ body {
     box-sizing:border-box;
     width:0;
     display:flex;
-    left:49vw;
-    top:69vh;
+    left:49%;
+    top:69%;
     background-color:#323232;
     outline:none;
     border-top: 0;
@@ -32,8 +32,8 @@ body {
     height:50px;
     width: 50px;
     position: absolute;
-    top:65.733333vh;
-    left: 49vw;
+    top:65.733333%;
+    left: 49%;
     background-color:#14ffec;
     color: #252a34;
     border: 0;
