@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">今天想说些什么呢</h1>
+    <input type="text"
+           id="inp" 
+           placeholder="请输入十五个字以内哦"
+           maxlength="15">
+           <button id="btn" data-status = "move" >+</button>
+
+
+           <script>
+            //提取元素
+            let text = document.getElementById("text");
+            let inp = document.getElementById("inp");
+            let btn =document.getElementById("btn");
+        
+            //初始化一些常用文本
+            let initial_text = "今天想说些什么呢";
+            let blank_text = "";
+        
+            //变量统一管理区域
+            let join_num = 0;
+        
+            btn.addEventListener("click" , function() {
+                //变量管理
+                join_num = 0;
+                let text_input = inp.value;
+                let join_text = ""; 
+
+                //改变按钮样式
+                if(btn.dataset.status.includes("move"))
+               {
+                  btn.style.left= " 58vw";
+                  btn.innerHTML = "o";
+                  btn.dataset.status= "add";
+
+                  inp.value = "";
+                  inp.style.width = "150px";
+               } else {
+                  btn.style.left= "49vw";
+                  btn.innerHTML = "+";
+                  btn.dataset.status = "move";
+                
+                  inp.style.width = "0";
+
+                //选定文本
+                text.innerHTML = "";
+                if( text_input.length!== 0){
+                  join_text = text_input;
+                }
+                 else {
+                    join_text = initial_text;
+                    console.log(join_text);
+                }
+                
+                //显示文字
+                let timer = setInterval(() => {
+                    if(join_num < join_text.length)
+                {
+                    text.innerHTML += join_text[join_num]; 
+                    join_num++;
+                }
+                else {
+                     clearInterval(timer);
+                }
+                    
+                }, 50);
+            }
+            })
+        </script>
+</body>
+
+</html>
